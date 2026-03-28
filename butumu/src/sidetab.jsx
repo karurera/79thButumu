@@ -70,14 +70,14 @@ function Sidetab() {
 
   return (
     <>
-      <h1 id="title" class={ishome && !isScrolled ? "" : "small"} onClick={home}>物理部展</h1>
-      <div class = "menu">
-        <div class ={active ? "close" : "more"} onClick={tap}>
-          <div class = "tapbar" id = "bar1"/>
-          <div class = "tapbar" id = "bar2"/>
-          <div class = "tapbar" id = "bar3"/>
+      <h1 id="title" className={ishome && !isScrolled ? "" : "small"} onClick={home}>物理部展</h1>
+      <div className="menu">
+        <div className={active ? "close" : "more"} onClick={tap}>
+          <div className="tapbar" id="bar1"/>
+          <div className="tapbar" id="bar2"/>
+          <div className="tapbar" id="bar3"/>
         </div>
-        <ul class ={active ? "active" : ""}>
+        <ul className={active ? "active" : ""}>
           <motion.li
           initial={{x: 30, opacity: 0}}
           whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.5}}}
