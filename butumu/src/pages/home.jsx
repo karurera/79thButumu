@@ -60,14 +60,8 @@ function Home() {
     const [image,setimage] = useState(0);
 
     useEffect(() => {
-        if(image >= 8){
-            setimage(0);
-        }
-    },[image])
-
-    useEffect(() => {
         const timer = setInterval(() => {
-            setimage((prev) => prev + 1);
+            setimage((prev) => (prev + 1) % 8);
         }, 5000);
 
         return () => clearInterval(timer);
@@ -163,7 +157,9 @@ function Home() {
                     <div class = "bar"/>
                     <img src={test5}/>
                 </div>
-                <div class = "nativebar"/>
+                <div className = "yellow">
+                    <div class = "nativebar"/>
+                </div>
             </div>
             <main>
                 <div class = "MainFlex">

@@ -1,4 +1,4 @@
-.tenjiButuri {
+.room1 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -6,12 +6,16 @@
     position: relative;
 }
 
-.product {
-    margin: 10px auto;
+.room1 article h2 {
+    color: #000;
+    font-family: "league";
+    font-size: 50px;
 }
 
-.product h2 {
+.room1 nav > h2 {
     color: #000;
+    font-family: "league";
+    font-size: 50px;
 }
 
 .tagSelect {
