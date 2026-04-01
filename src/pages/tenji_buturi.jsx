@@ -91,6 +91,7 @@ export default function Tenji(){
                 title = {TESLA.TITLE}
                 image = {TESLA.IMAGE}
                 txt = {TESLA.TXT}
+                pageId = {TESLA.LIKE}
                 />
                 <Template
                 visible = {digital || all}
@@ -99,6 +100,7 @@ export default function Tenji(){
                 title = {LED.TITLE}
                 image = {LED.IMAGE}
                 txt = {LED.TXT}
+                pageId = {LED.LIKE}
                 />
                 <Template
                 visible = {digital || all}
@@ -107,6 +109,7 @@ export default function Tenji(){
                 title = {CPU.TITLE}
                 image = {CPU.IMAGE}
                 txt = {CPU.TXT}
+                pageId = {CPU.LIKE}
                 />
                 <Template
                 visible = {robot || all}
@@ -115,6 +118,7 @@ export default function Tenji(){
                 title = {FLY.TITLE}
                 image = {FLY.IMAGE}
                 txt = {FLY.TXT}
+                pageId = {FLY.LIKE}
                 />
                 <Template
                 visible = {analog || all}
@@ -123,6 +127,7 @@ export default function Tenji(){
                 title = {SL.TITLE}
                 image = {SL.IMAGE}
                 txt = {SL.TXT}
+                pageId = {SL.LIKE}
                 />
                 <Template
                 visible = {robot || all}
@@ -131,6 +136,7 @@ export default function Tenji(){
                 title = {PAINT.TITLE}
                 image = {PAINT.IMAGE}
                 txt = {PAINT.TXT}
+                pageId = {PAINT.LIKE}
                 />
                 <Template
                 visible = {robot || all}
@@ -139,6 +145,7 @@ export default function Tenji(){
                 title = {CAR.TITLE}
                 image = {CAR.IMAGE}
                 txt = {CAR.TXT}
+                pageId = {CAR.LIKE}
                 />
             </nav>
         </div>

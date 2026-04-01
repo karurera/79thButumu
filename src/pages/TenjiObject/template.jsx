@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import './template.css'
+import LikeButton from '../tool/likeButton';
 
-export default function Template({visible,sltenji,tag,title,image,txt}) {
+export default function Template({visible,sltenji,tag,title,image,txt,pageId}) {
 
     const [focus,setfocus] = useState(false);
 
@@ -26,6 +27,7 @@ export default function Template({visible,sltenji,tag,title,image,txt}) {
                 <div className = "obTitle">
                     <h2>{title}</h2>
                     <p>#{tag}</p>
+                    <LikeButton pageId={pageId}/>
                 </div>
                 <div className = "obImage">
                     <img src={image} />
