@@ -1,0 +1,104 @@
+footer {
+    background-color: #202020;
+    border-radius: 30px 30px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+footer nav {
+    margin: 30px 30px 10px;
+}
+
+footer nav > p {
+    border-bottom: #ddd 1px solid;
+}
+
+footer nav ul {
+    padding-inline-start: 0px;
+}
+
+footer nav h3 {
+    color: #ddd;
+    margin: 0px;
+    font-family: "league";
+    font-size: 30px;
+}
+
+footer nav p {
+    color: #ddd;
+    margin: 0px;
+}
+
+footer nav li {
+    color: #ddd;
+    font-family: "light";
+    margin: 12px 0px;
+    position: relative;
+    font-size: 11px;
+}
+
+nav li ul {
+    overflow-y: hidden;
+    height: 0px;
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+.plus1 {
+    position: absolute;
+    border-bottom: #ddd 2px solid;
+    width: 20px;
+    right: 20px;
+    top: 35px;
+    transition-duration: 0.3s;
+}
+
+.plus2 {
+    position: absolute;
+    border-bottom: #ddd 2px solid;
+    width: 20px;
+    transform: rotate(90deg);
+    right: 20px;
+    top: 35px;
+    transition-duration: 0.3s;
+}
+
+.actplus1 .plus2 {
+    transform: rotate(0deg);
+}
+
+.actplus2 .plus2 {
+    transform: rotate(0deg);
+}
+
+.actplus1 ul {
+    height: 200px;
+    opacity: 1;
+    transition-duration: 0.3s;
+}
+
+.actplus2 ul {
+    height: 150px;
+    opacity: 1;
+    transition-duration: 0.3s;
+}
+
+.arrow {
+    position: absolute;
+    right: 21px;
+    bottom: 13px;
+}
+
+.xIcon {
+    margin: 0px 30px;
+}
+
+.endTitle {
+    position: absolute;
+    margin: 0px 20px;
+    text-align: right;
+    word-break: keep-all;
+    bottom: 0px;
+    right: 10px;
+}

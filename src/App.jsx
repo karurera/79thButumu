@@ -8,6 +8,7 @@ import Sidetab from './sidetab'
 import Katudou from './pages/katudou'
 import Class from './pages/tenji_class'
 import ScrollToTop from './scroll'
+import Footer from './footer'
 
 function App() {
 

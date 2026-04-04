@@ -41,7 +41,6 @@
     display: flex;
     position: sticky;
     top: 5px;
-    z-index: 80;
 }
 
 .tag {

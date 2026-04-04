@@ -18,6 +18,7 @@ import m1game from './image/m1game.jpg'
 import quest2 from './image/quest2.jpg'
 import Testimage from './image/tenji.jpg'
 import shiiru from './image/shiiru01.png'
+import Footer from '../footer';
 
 function Home() {
 
@@ -29,25 +30,13 @@ function Home() {
 
     const motionDuration = 0.5;
 
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-      const handleScroll = () => {
-        if (window.scrollY > 500) {
-          setIsScrolled(true);
-        } else {
-        setIsScrolled(false);
-        }
-      };
-
-      window.addEventListener("scroll", handleScroll);
-
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, []);
-
     const navigation = useNavigate();
+
+    const [selectImg,setSelectImg] = useState(1);
+
+    const tapImg = () => {
+        setSelectImg(prev => (prev + 1) % 4)
+    }
 
     const classroom = () => {
         navigation(ROUTES.CLASS);
@@ -56,16 +45,6 @@ function Home() {
     const jikken = () => {
         navigation(ROUTES.BUTURI);
     }
-
-    const [image,setimage] = useState(0);
-
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setimage((prev) => (prev + 1) % 8);
-        }, 5000);
-
-        return () => clearInterval(timer);
-    }, []);
 
     const [buy,setbuy] = useState(true);
 
@@ -91,105 +70,71 @@ function Home() {
         setbuy(prev => !prev);
     }
 
-    const x = () => {
-        window.location.href = "https://x.com/butumubutumu";
-    }
-
     const ref = useRef(null)
 
     const isInView = useInView(ref)
 
-    const [plus1, setplus1] = useState(false)
-
-    const [plus2, setplus2] = useState(false)
-
-    const clplus1 = () => {
-        setplus1(!plus1);
-    }
-
-    const clplus2 = () => {
-        setplus2(!plus2);
-    }
-
     return (
         <>
-            <div className = "image">
-                <div className = {image === 0 ? "open" : "hide"}>
-                    <h2 className = "title">Self-made Game</h2>
-                    <p className = "explain">Developed by Kou</p>
-                    <div className = "bar"/>
-                    <img src={m1game} onClick={jikken}/>
-                </div>
-                <div className = {image === 1 ? "open" : "hide"}>
-                    <h2 className = "title">VR Game</h2>
-                    <p className = "explain">Developed by Kurosawa,Kinoshita</p>
-                    <div className = "bar"/>
-                    <img src={quest2} onClick={classroom}/>
-                </div>
-                <div className = {image === 2 ? "open" : "hide"}>
-                    <h2 className = "title">Infinity Mirror</h2>
-                    <p className = "explain">Developed by Sorita</p>
-                    <div className = "bar"/>
-                    <img src={mirror}/>
-                </div>
-                <div className = {image === 3 ? "open" : "hide"}>
-                    <h2 className = "title">Test</h2>
-                    <div className = "bar"/>
-                    <img src={test1}/>
-                </div>
-                <div className = {image === 4 ? "open" : "hide"}>
-                    <h2 className = "title">Test</h2>
-                    <div className = "bar"/>
-                    <img src={test2}/>
-                </div>
-                <div className = {image === 5 ? "open" : "hide"}>
-                    <h2 className = "title">Test</h2>
-                    <div className = "bar"/>
-                    <img src={test3}/>
-                </div>
-                <div className = {image === 6 ? "open" : "hide"}>
-                    <h2 className = "title">Test</h2>
-                    <div className = "bar"/>
-                    <img src={test4}/>
-                </div>
-                <div className = {image === 7 ? "open" : "hide"}>
-                    <h2 className = "title">Test</h2>
-                    <div className = "bar"/>
-                    <img src={test5}/>
-                </div>
-                <div className = "yellow">
-                    <div className = "nativebar"/>
-                </div>
+            <div className = "image"> 
+                {/* アニメーションは任せた */}
+                <ul className = "imgStack" onClick={tapImg}>
+                    <li id = "img1">
+                        <img src = {Testimage}/>
+                        <h4>(作者など)</h4>
+                    </li>
+                    <li id = "img2">
+                        <img src = {Testimage}/>
+                        <h4>(作者など)</h4>
+                    </li>
+                    <li id = "img3">
+                        <img src = {Testimage}/>
+                        <h4>(作者など)</h4>
+                    </li>
+                    <li id = "img4">
+                        <img src = {Testimage}/>
+                        <h4>(作者など)</h4>
+                    </li>
+                </ul>
             </div>
             <main>
                 <div className = "MainFlex">
                     <aside>
+                        <h2>Product</h2>
                         <div className = "proList">
                             <motion.ul
                             initial={{x: "calc(100vmin - 20px)"}}
                             whileInView={{x: 0}}
-                            transition={{duration: 2.5, type: "spring", bounce: 0.4}}
+                            transition={{duration: 0.5}}
                             viewport={{margin: "0px 0px -300px 0px", once: true}}
                             >
                                 <li>
                                     <img src={m1game}/>
-                                    <p>自作ゲーム</p>
-                                    <h3>01</h3>
+                                    <div>
+                                        <h3>01</h3>
+                                        <p>自作ゲーム</p>
+                                    </div>
                                 </li>
                                 <li>
                                     <img src={quest2}/>
-                                    <p>VRゲーム</p>
-                                    <h3>02</h3>
+                                    <div>
+                                        <h3>02</h3>
+                                        <p>VRゲーム</p>
+                                    </div>
                                 </li>
                                 <li>
                                     <img src={mirror}/>
-                                    <p>インフィニティミラー</p>
-                                    <h3>03</h3>
+                                    <div>
+                                        <h3>03</h3>
+                                        <p>インフィニティミラー</p>
+                                    </div>
                                 </li>
                                 <li>
                                     <img src={Testimage}/>
-                                    <p>テスト</p>
-                                    <h3>04</h3>
+                                    <div>
+                                        <h3>04</h3>
+                                        <p>テスト</p>
+                                    </div>
                                 </li>
                             </motion.ul>
                         </div>
@@ -200,7 +145,7 @@ function Home() {
                     </aside>
                     <nav>
                         <hgroup>
-                            <h2 ref={ref}>展示教室</h2>
+                            <h2 >Exhibition</h2>
                             <div className ={isInView ? "highlight" : ""}/>
                         </hgroup>
                         <motion.img
@@ -218,7 +163,7 @@ function Home() {
                         className = "block"
                         onClick={jikken}>
                             <img src={butudai} className = "butudai"/>
-                            <h2 className = "class1"><span>300</span>教室</h2>
+                            <h2 className = "class1"><span>301</span>教室</h2>
                             <div><p className = "tapToGo" id = "cls1button">TAP TO VISIT <TfiArrowTopRight size={13} className = "jump1"/></p></div>
                             <p className = "txt3">ドローン、トランスフォーマー、自作CPUなど演示展示が多くある教室です。電子工作体験やクイズなど実際に体験していただける展示なども設置しています。</p>
                         </motion.div>
@@ -237,12 +182,13 @@ function Home() {
                         className = "block"
                         onClick={classroom}>
                             <img src={testClass} className = "class"/>
-                            <h2 className = "class2"><span>300</span>教室</h2>
+                            <h2 className = "class2"><span>302</span>教室</h2>
                             <div><p className = "tapToGo" id = "cls2button">TAP TO VISIT <TfiArrowTopRight size={13} className = "jump1"/></p></div>
                             <p className = "txt4">VR、アーケードゲーム、イライラ棒など体験展示が多くある教室です。</p>
                         </motion.div>
                     </nav>
                     <article className = "sale">
+                        <h2>Sales</h2>
                         <div className = {buy ? "act1" : "act2"}>
                             <motion.div
                             id = "imgDiv1"
@@ -299,60 +245,7 @@ function Home() {
                         </motion.div>
                     </article>
                 </div>
-                <footer>
-                    <nav>
-                        <p>(サイトマップ)</p>
-                        <ul>
-                            <li className ={plus1 ? "actplus1" : ""} onClick={clplus1}>
-                                <h3>Room 301</h3>
-                                <p>(301教室)</p>
-                                <ul>
-                                    <li>(テスラコイル)</li>
-                                    <li>(LEDキューブ)</li>
-                                    <li>(自作CPU)</li>
-                                    <li>(ドローン)</li>
-                                    <li>(蒸気機関)</li>
-                                    <li>(お絵かきロボット)</li>
-                                    <li>(トランスフォーマー)</li>
-                                    <li>(チカチカ)</li>
-                                </ul>
-                                <div>
-                                    <div className = "plus1"/>
-                                    <div className = "plus2"/>
-                                </div>
-                            </li>
-                            <li className ={plus2 ? "actplus2" : ""} onClick={clplus2}>
-                                <h3>Room 302</h3>
-                                <p>(302教室)</p>
-                                <ul>
-                                    <li>(VRゲーム)</li>
-                                    <li>(音ゲー)</li>
-                                    <li>(イライラ棒)</li>
-                                    <li>(自作ゲーム)</li>
-                                    <li>(エアホッケー)</li>
-                                </ul>
-                                <div>
-                                    <div className = "plus1"/>
-                                    <div className = "plus2"/>
-                                </div>
-                            </li>
-                            <li>
-                                <h3>About</h3>
-                                <p>(物理部展とは)</p>
-                                <TfiArrowTopRight size={25} className = "arrow"/>
-                            </li>
-                            <li>
-                                <h3>Activity</h3>
-                                <p>(活動)</p>
-                                <TfiArrowTopRight size={25} className = "arrow"/>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div className = "xlink" onClick={x}>
-                        <AiOutlineX size={24} color={"#ddd"} className = "xIcon"/>
-                    </div>
-                    <h2 className = "endTitle">物理部展</h2>
-                </footer>
+                <Footer />
             </main>
         </>
     )

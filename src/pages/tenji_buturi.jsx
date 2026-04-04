@@ -5,6 +5,7 @@ import tenji from './image/tenji.jpg'
 import { useSearchParams } from 'react-router-dom';
 import './TenjiObject/butudai'
 import { CAR, CPU, FLY, LED, PAINT, SL, TESLA } from './TenjiObject/butudai';
+import Footer from '../footer';
 
 export default function Tenji(){
 
@@ -61,6 +62,7 @@ export default function Tenji(){
     }, [tenjiNum])
 
     return (
+      <>
         <div className = "room1">
             <article>
                 <h2>Map</h2>
@@ -149,5 +151,7 @@ export default function Tenji(){
                 />
             </nav>
         </div>
+        <Footer />
+      </>
     )
 }
