@@ -3,7 +3,7 @@ body {
     padding: 0px;
 }
 
-main {
+.home {
     width: 100%;
     position: absolute;
     top: 100vh;
@@ -32,42 +32,74 @@ main {
 
 .imgStack {
     position: absolute;
-    top: 3vh;
-    left: 3vw;
+    top: 6vh;
+    right: 3vw;
     padding-inline-start: 0px;
 }
 
-#img1 {
-    position: relative;
-    overflow: hidden;
+.img1 {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition-duration: 1s;
 }
 
-#img2 {
+@keyframes topImg {
+    to {transform: translate(0vw,0vh);}
+    50% {transform: translate(-90vw,-4.5vh);}
+    from {transform: translate(-9vw,-9vh);}
+}
+
+.img2 {
+    z-index: 9;
     position: absolute;
     top: 3vh;
-    left: 3vw;
+    right: 3vw;
+    transition-duration: 1s;
 }
 
-#img3 {
+.img3 {
+    z-index: 8;
     position: absolute;
     top: 6vh;
-    left: 6vw;
+    right: 6vw;
+    transition-duration: 1s;
 }
 
-#img4 {
+.img4 {
+    z-index: 7;
     position: absolute;
     top: 9vh;
-    left: 9vw;
+    right: 9vw;
+    animation: topImg 1s ease 0s;
+    transition-delay: 0.5s;
+    transition-property: z-index;
 }
 
 .imgStack h4 {
     position: absolute;
     bottom: 0px;
-    left: 0px;
+    right: 0px;
     background-color: #f0f0f0;
     padding: 15px;
-    transform: translate(1px,14.5px);
-    border-radius: 0px 10px 0px 10px;
+    transform: translate(-1px,14.4px);
+    border-radius: 10px 0px 9px 0px;
+}
+
+.bottomTab {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    top: 85.5vh;
+    width: 100vw;
+}
+
+.bottomTab h2 {
+    color: #000;
+    font-family: "league";
+    font-size: 40px;
+    margin: calc(8vh - 30px) auto;
 }
 
 aside {

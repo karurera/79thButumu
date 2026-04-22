@@ -28,8 +28,8 @@ export default function Footer() {
                 <p>(サイトマップ)</p>
                 <ul>
                     <li className ={plus1 ? "actplus1" : ""} onClick={clplus1}>
-                        <h3>Room 301</h3>
-                        <p>(301教室)</p>
+                        <h3>Room 350</h3>
+                        <p>(350教室)</p>
                         <ul>
                             <li>(テスラコイル)</li>
                             <li>(LEDキューブ)</li>
@@ -46,8 +46,8 @@ export default function Footer() {
                         </div>
                     </li>
                     <li className ={plus2 ? "actplus2" : ""} onClick={clplus2}>
-                        <h3>Room 302</h3>
-                        <p>(302教室)</p>
+                        <h3>Room 333</h3>
+                        <p>(333教室)</p>
                         <ul>
                             <li>(VRゲーム)</li>
                             <li>(音ゲー)</li>

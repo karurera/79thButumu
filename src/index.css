@@ -36,6 +36,11 @@
   src: url('/src/assets/LeagueGothic-Regular-VariableFont_wdth.ttf');
 }
 
+@font-face {
+  font-family: gochic;
+  src: url('/src/assets//ShipporiGochicB2-Bold.ttf');
+}
+
 h1 {
   font-size: 5em;
   line-height: 1.1;

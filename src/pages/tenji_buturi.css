@@ -41,6 +41,7 @@
     display: flex;
     position: sticky;
     top: 5px;
+    z-index: 10;
 }
 
 .tag {
@@ -53,7 +54,7 @@
 
 .tag .false {
     color: #222;
-    background-color: #ddd;
+    background-color: #f0f0f0;
 }
 
 .tag p {
@@ -61,5 +62,5 @@
     border: 1px solid #222;
     border-radius: 15px;
     background-color: #222;
-    color: #ddd;
+    color: #f0f0f0;
 }

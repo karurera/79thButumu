@@ -8,20 +8,22 @@ import {
   increment,
   onSnapshot,
 } from "firebase/firestore";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import "./LikeButton.css";
 
 export default function LikeButton({ pageId }) {
   const [count, setCount] = useState(0);
   const [liked, setLiked] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [animating, setAnimating] = useState(false);
 
   const storageKey = `liked_${pageId}`;
 
-  // ローカルストレージで「押し済み」を管理
   useEffect(() => {
     setLiked(localStorage.getItem(storageKey) === "true");
   }, [storageKey]);
 
-  // Firestoreをリアルタイム監視
   useEffect(() => {
     const ref = doc(db, "likes", pageId);
     const unsub = onSnapshot(ref, (snap) => {
@@ -36,15 +38,12 @@ export default function LikeButton({ pageId }) {
 
     const ref = doc(db, "likes", pageId);
     const snap = await getDoc(ref);
-    const current = snap.exists() ? snap.data().count : 0;
 
     if (liked) {
-      // いいね解除
       await updateDoc(ref, { count: increment(-1) });
       localStorage.removeItem(storageKey);
       setLiked(false);
     } else {
-      // いいね追加
       if (snap.exists()) {
         await updateDoc(ref, { count: increment(1) });
       } else {
@@ -52,31 +51,26 @@ export default function LikeButton({ pageId }) {
       }
       localStorage.setItem(storageKey, "true");
       setLiked(true);
+      // アニメーション発火
+      setAnimating(true);
+      setTimeout(() => setAnimating(false), 1000);
     }
 
     setLoading(false);
   };
 
   return (
-    <button
-      onClick={handleLike}
-      disabled={loading}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "8px",
-        padding: "10px 20px",
-        border: liked ? "2px solid #e25555" : "2px solid #ccc",
-        borderRadius: "999px",
-        background: liked ? "#fff0f0" : "#fff",
-        color: liked ? "#e25555" : "#666",
-        cursor: "pointer",
-        fontSize: "1rem",
-        transition: "all 0.2s",
-      }}
-    >
-      <span>{liked ? "❤️" : "🤍"}</span>
-      <span>{count}</span>
-    </button>
+    <div className="like-wrapper">
+      <div
+        className={`goodBtn ${animating ? "active" : ""}`}
+        onClick={handleLike}
+      >
+        <FontAwesomeIcon
+          icon={faHeart}
+          className="fa-heart"
+          style={{ color: liked ? "red" : "#f0f0f0" }}
+        />
+      </div>
+    </div>
   );
 }

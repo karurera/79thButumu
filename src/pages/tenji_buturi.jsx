@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react'
 import './tenji_buturi.css'
 import Template from './TenjiObject/template'
-import tenji from './image/tenji.jpg'
 import { useSearchParams } from 'react-router-dom';
 import './TenjiObject/butudai'
-import { CAR, CPU, FLY, LED, PAINT, SL, TESLA } from './TenjiObject/butudai';
+import { CAR, CPU, FLY, LED, PAINT, ROBOT, TESLA } from './TenjiObject/butudai';
 import Footer from '../footer';
 
 export default function Tenji(){
@@ -123,13 +122,13 @@ export default function Tenji(){
                 pageId = {FLY.LIKE}
                 />
                 <Template
-                visible = {analog || all}
+                visible = {robot || all}
                 sltenji = {fctenji === 5}
-                tag = {SL.TAG}
-                title = {SL.TITLE}
-                image = {SL.IMAGE}
-                txt = {SL.TXT}
-                pageId = {SL.LIKE}
+                tag = {ROBOT.TAG}
+                title = {ROBOT.TITLE}
+                image = {ROBOT.IMAGE}
+                txt = {ROBOT.TXT}
+                pageId = {ROBOT.LIKE}
                 />
                 <Template
                 visible = {robot || all}

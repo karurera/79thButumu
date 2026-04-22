@@ -16,14 +16,6 @@ function Sidetab() {
 
   const ishome = location.pathname === "/";
 
-  const isbutudai = location.pathname === "/Room301"
-
-  const isclass = location.pathname === "/Room302"
-
-  const isbutumu = location.pathname === "/butumu"
-  
-  const iskatudou = location.pathname === "/katsudou"
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -80,7 +72,7 @@ function Sidetab() {
         <ul className={active ? "active" : ""}>
           <motion.li
           initial={{x: 30, opacity: 0}}
-          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.5}}}
+          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.3}}}
           transition={{duration: 0, delay: 0}}
           onClick={home}>
             <h3>Home</h3>
@@ -88,23 +80,23 @@ function Sidetab() {
           </motion.li>
           <motion.li
           initial={{x: 30, opacity: 0}}
-          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.55}}}
+          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.35}}}
           transition={{duration: 0, delay: 0}}
           onClick={room301}>
-            <h3>Room 301</h3>
-            <p>(301教室)</p>
+            <h3>Room 350</h3>
+            <p>(350教室)</p>
           </motion.li>
           <motion.li
           initial={{x: 30, opacity: 0}}
-          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.6}}}
+          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.4}}}
           transition={{duration: 0, delay: 0}}
           onClick={room302}>
-            <h3>Room 302</h3>
-            <p>(302教室)</p>
+            <h3>Room 333</h3>
+            <p>(333教室)</p>
           </motion.li>
           <motion.li
           initial={{x: 30, opacity: 0}}
-          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.65}}}
+          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.45}}}
           transition={{duration: 0, delay: 0}}
           onClick={butumu}>
             <h3>About</h3>
@@ -112,7 +104,7 @@ function Sidetab() {
           </motion.li>
           <motion.li
           initial={{x: 30, opacity: 0}}
-          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.7}}}
+          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.5}}}
           transition={{duration: 0, delay: 0}}
           onClick={katudou}>
             <h3>Activity</h3>

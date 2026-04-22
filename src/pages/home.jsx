@@ -32,10 +32,10 @@ function Home() {
 
     const navigation = useNavigate();
 
-    const [selectImg,setSelectImg] = useState(1);
+    const [selectImg,setSelectImg] = useState(0);
 
     const tapImg = () => {
-        setSelectImg(prev => (prev + 1) % 4)
+        setSelectImg(prev => (prev + 1))
     }
 
     const classroom = () => {
@@ -79,25 +79,25 @@ function Home() {
             <div className = "image"> 
                 {/* アニメーションは任せた */}
                 <ul className = "imgStack" onClick={tapImg}>
-                    <li id = "img1">
+                    <li id = "img1" className = {`img${4 - (selectImg + 3) % 4}`}>
                         <img src = {Testimage}/>
-                        <h4>(作者など)</h4>
+                        <h4>(作者など)1</h4>
                     </li>
-                    <li id = "img2">
+                    <li id = "img2" className = {`img${4 - (selectImg + 2) % 4}`}>
                         <img src = {Testimage}/>
-                        <h4>(作者など)</h4>
+                        <h4>(作者など)2</h4>
                     </li>
-                    <li id = "img3">
+                    <li id = "img3" className = {`img${4 - (selectImg + 1) % 4}`}>
                         <img src = {Testimage}/>
-                        <h4>(作者など)</h4>
+                        <h4>(作者など)3</h4>
                     </li>
-                    <li id = "img4">
+                    <li id = "img4" className = {`img${4 - (selectImg + 0) % 4}`}>
                         <img src = {Testimage}/>
-                        <h4>(作者など)</h4>
+                        <h4>(作者など)4</h4>
                     </li>
                 </ul>
             </div>
-            <main>
+            <main className = "home">
                 <div className = "MainFlex">
                     <aside>
                         <h2>Product</h2>
@@ -140,7 +140,7 @@ function Home() {
                         </div>
                         <div className = "proTxt">
                             <p>上の写真は<wbr/>物理部無線班の部員が<wbr/>半年ほどかけて<wbr/>製作した作品です。</p>
-                            <p>300教室（物理台実験室）と<wbr/>300教室（高三の一教室）の<wbr/>二教室で展示をしているので<wbr/>ぜひ見に来てください！</p>
+                            <p>350教室（物理台実験室）と<wbr/>333教室（高三の一教室）の<wbr/>二教室で展示をしているので<wbr/>ぜひ見に来てください！</p>
                         </div>
                     </aside>
                     <nav>
@@ -163,7 +163,7 @@ function Home() {
                         className = "block"
                         onClick={jikken}>
                             <img src={butudai} className = "butudai"/>
-                            <h2 className = "class1"><span>301</span>教室</h2>
+                            <h2 className = "class1"><span>350</span>教室</h2>
                             <div><p className = "tapToGo" id = "cls1button">TAP TO VISIT <TfiArrowTopRight size={13} className = "jump1"/></p></div>
                             <p className = "txt3">ドローン、トランスフォーマー、自作CPUなど演示展示が多くある教室です。電子工作体験やクイズなど実際に体験していただける展示なども設置しています。</p>
                         </motion.div>
@@ -182,7 +182,7 @@ function Home() {
                         className = "block"
                         onClick={classroom}>
                             <img src={testClass} className = "class"/>
-                            <h2 className = "class2"><span>302</span>教室</h2>
+                            <h2 className = "class2"><span>333</span>教室</h2>
                             <div><p className = "tapToGo" id = "cls2button">TAP TO VISIT <TfiArrowTopRight size={13} className = "jump1"/></p></div>
                             <p className = "txt4">VR、アーケードゲーム、イライラ棒など体験展示が多くある教室です。</p>
                         </motion.div>
@@ -213,9 +213,9 @@ function Home() {
                         >
                             <div>
                                 <div>
-                                    <h2>販売物<wbr/>(301教室)</h2>
+                                    <h2>販売物<wbr/>(350教室)</h2>
                                 </div>
-                                <p>301教室では例年物販を行なっております。今年も例年通り、ほとんと全ての展示物の設計をまとめた回路図集、現中三の部員がマイコンを使って作った自作ゲーム、ハンダ付け体験用のチカチカキットを販売しています。ぜひ購入してください！</p>
+                                <p>350教室では例年物販を行なっております。今年も例年通り、ほとんと全ての展示物の設計をまとめた回路図集、現中三の部員がマイコンを使って作った自作ゲーム、ハンダ付け体験用のチカチカキットを販売しています。ぜひ購入してください！</p>
                             </div>
                         </motion.hgroup>
                         <motion.div
