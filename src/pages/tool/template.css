@@ -53,3 +53,18 @@
 .arr {
     transform: translateY(5px);
 }
+
+@media (min-width: 600px) {
+    .temp {
+        padding: 1vw;
+    }
+
+    .temp img {
+        width: 38vw;
+        height: 38vw;
+    }
+
+    .temp hgroup .jump {
+        width: 20vw;
+    }
+}

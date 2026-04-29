@@ -8,6 +8,7 @@ export default function Class(){
     return (
       <>
         <div className = "room1">
+            <h1>333教室</h1>
             <article>
                 <h2>Map</h2>
                 <div className = "map">

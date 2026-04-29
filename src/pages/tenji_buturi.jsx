@@ -50,6 +50,7 @@ export default function Tenji(){
     return (
       <>
         <div className = "room1">
+            <h1>350教室</h1>
             <article>
                 <h2>Map</h2>
                 <div className = "map">

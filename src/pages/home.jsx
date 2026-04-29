@@ -94,9 +94,9 @@ function Home() {
                         <h2>Product</h2>
                         <div className = "proList">
                             <motion.ul
-                            initial={{x: "calc(100vmin - 20px)"}}
-                            whileInView={{x: 0}}
-                            transition={{duration: 0.5}}
+                            initial={{x: "45vw", opacity: 0}}
+                            whileInView={{x: 0, opacity: 1}}
+                            transition={{duration: 1}}
                             viewport={{margin: "0px 0px -300px 0px", once: true}}
                             >
                                 <li>
@@ -243,8 +243,8 @@ function Home() {
                         </motion.div>
                     </article>
                 </div>
-                <Footer />
             </main>
+            <Footer/>
         </>
     )
 }

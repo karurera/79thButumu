@@ -4,13 +4,11 @@ body {
 }
 
 .home {
-    width: 100%;
-    position: absolute;
-    top: 100vh;
-    overflow-x: hidden;
+    width: 100vw;
     overscroll-behavior-x: contain;
     background-color: #ddd;
     z-index: 65;
+    overflow-x: hidden;
 }
 
 .MainFlex {
@@ -20,6 +18,11 @@ body {
     align-items: center;
     width: 100vmin;
     margin: 0px auto;
+}
+
+.image {
+    height: 100vh;
+    width: 100vw;
 }
 
 .image img {
@@ -88,21 +91,6 @@ body {
     padding: 15px;
     transform: translate(-1px,14.4px);
     border-radius: 10px 0px 9px 0px;
-}
-
-.bottomTab {
-    display: flex;
-    flex-wrap: nowrap;
-    position: absolute;
-    top: 85.5vh;
-    width: 100vw;
-}
-
-.bottomTab h2 {
-    color: #000;
-    font-family: "league";
-    font-size: 40px;
-    margin: calc(8vh - 30px) auto;
 }
 
 aside {
@@ -542,4 +530,161 @@ nav li ul {
     word-break: keep-all;
     bottom: 0px;
     right: 10px;
+}
+
+@media (min-width: 600px) {
+    .image img {
+        width: 42.5vw;
+    }
+
+    .image {
+        width: 50vw;
+        position: relative;
+        left: 25vw;
+    }
+
+    .imgStack {
+        right: 1.5vw;
+    }
+
+    @keyframes topImg {
+        to {transform: translate(0vw,0vh);}
+        50% {transform: translate(-45vw,-2.25vh);}
+        from {transform: translate(-4.5vw,-4.5vh);}
+    }
+
+    .img2 {
+        right: 1.5vw;
+    }
+
+    .img3 {
+        right: 3vw;
+    }
+
+    .img4 {
+        right: 4.5vw;
+    }
+
+    .home {
+        position: relative;
+        width: 50vw;
+        left: 25vw;
+        overflow-x: visible;
+    }
+
+    .MainFlex {
+        width: 50vw;
+    }
+
+    aside {
+        width: 50vw;
+    }
+
+    aside h2 {
+        width: 40vw;
+        margin-left: 5vw;
+    }
+
+    aside li {
+        width: 20vw;
+        padding: 1.5vw 1.5vw 0;
+    }
+
+    aside li img {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    aside .proTxt {
+        width: 35vw;
+    }
+
+    .MainFlex nav hgroup {
+        width: 40vw;
+    }
+
+    .shiiru {
+        width: 20vw;
+    }
+
+    .block {
+        width: 40vw;
+        padding: 1.5vw;
+    }
+
+    .block img {
+        width: 40vw;
+        height: 40vw;
+    }
+
+    .sale {
+        width: 50vw;
+        height: 140vw;
+    }
+
+    .sale h2 {
+        width: 40vw;
+    }
+
+    .sale #imgDiv1 {
+        width: 45vw;
+        height: 59vw;
+        left: 2.5vw;
+    }
+
+    .sale #imgDiv1 img {
+        margin: 1.5vw;
+        width: 42vw;
+        height: 56vw;
+    }
+
+    .sale #imgDiv2 {
+        width: 45vw;
+        height: 59vw;
+        left: 2.5vw;
+    }
+
+    .sale #imgDiv2 img{
+        margin: 1.5vw;
+        width: 42vw;
+        height: 56vw;
+    }
+
+    @keyframes left1 {
+        from {transform: translateX(0) rotate(-3deg);}
+        50% {transform: translateX(-22.5vw) rotate(-3deg);}
+        to {transform: translateX(0) rotate(-3deg);}
+    }
+    
+    @keyframes right1 {
+        from {transform: translateX(0) rotate(-3deg);}
+        50% {transform: translateX(22.5vmin) rotate(-3deg);}
+        to {transform: translateX(0) rotate(-3deg);}
+    }
+
+    @keyframes left2 {
+        from {transform: translateX(0) rotate(3deg);}
+        50% {transform: translateX(-22.5vmin) rotate(3deg);}
+        to {transform: translateX(0) rotate(3deg);}
+    }
+
+    @keyframes right2 {
+    from {transform: translateX(0) rotate(3deg);}
+    50% {transform: translateX(22.5vmin) rotate(3deg);}
+    to {transform: translateX(0) rotate(3deg);}
+    }
+
+    .sale hgroup {
+        width: 40vw;
+        height: 40vw;
+        left: 1vw;
+        top: 75vw;
+    }
+
+    .sale .priceDiv {
+        width: 35vw;
+        height: 35vw;
+        top: 107.5vw;
+    }
+
 }

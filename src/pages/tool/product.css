@@ -29,7 +29,7 @@
 
 .state1 {
     left: 10vmin;
-    transform: translateX(95px);
+    transform: translateX(22vmin);
     z-index: 1;
     scale: 0.6;
     filter: blur(2px) opacity(50%);
@@ -38,7 +38,7 @@
 
 .state2 {
     left: 10vmin;
-    transform: translateX(30px);
+    transform: translateX(7vmin);
     z-index: 2;
     scale: 0.85;
     filter: blur(1px) opacity(80%);
@@ -56,7 +56,7 @@
 
 .state4 {
     left: 10vmin;
-    transform: translateX(-30px);
+    transform: translateX(-7vmin);
     z-index: 2;
     scale: 0.85;
     filter: blur(1px) opacity(80%);
@@ -65,7 +65,7 @@
 
 .state5 {
     left: 10vmin;
-    transform: translateX(-95px);
+    transform: translateX(-22vmin);
     z-index: 1;
     scale: 0.6;
     filter: blur(2px) opacity(50%);
@@ -130,7 +130,7 @@
     left: 40px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .product {
         display: flex;
         flex-direction: column;

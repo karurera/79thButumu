@@ -26,7 +26,7 @@ export default function Footer() {
     const navigation = useNavigate();
 
     const about = () => {
-        navigation(ROUTES.BUTUMU);
+        navigation(ROUTES.HOME);
     }
     
     const activity = () => {
@@ -78,13 +78,8 @@ export default function Footer() {
                         </div>
                     </li>
                     <li onClick={about}>
-                        <h3>About</h3>
-                        <p>(物理部展とは)</p>
-                        <TfiArrowTopRight size={25} className = "arrow"/>
-                    </li>
-                    <li onClick={activity}>
-                        <h3>Activity</h3>
-                        <p>(活動)</p>
+                        <h3>Home</h3>
+                        <p>(ホームに戻る)</p>
                         <TfiArrowTopRight size={25} className = "arrow"/>
                     </li>
                 </ul>

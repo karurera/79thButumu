@@ -16,6 +16,8 @@ function Sidetab() {
 
   const ishome = location.pathname === "/";
 
+  const pick = location.pathname === "/" || "/Room333" || "Room350";
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -61,7 +63,7 @@ function Sidetab() {
   }
 
   return (
-    <>
+    <div className = {pick ? "canSide" : ""}>
       <h1 id="title" className={ishome && !isScrolled ? "" : "small"} onClick={home}>物理部展</h1>
       <div className="menu">
         <div className={active ? "close" : "more"} onClick={tap}>
@@ -80,7 +82,7 @@ function Sidetab() {
           </motion.li>
           <motion.li
           initial={{x: 30, opacity: 0}}
-          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.35}}}
+          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.4}}}
           transition={{duration: 0, delay: 0}}
           onClick={room301}>
             <h3>Room 350</h3>
@@ -88,31 +90,15 @@ function Sidetab() {
           </motion.li>
           <motion.li
           initial={{x: 30, opacity: 0}}
-          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.4}}}
+          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.5}}}
           transition={{duration: 0, delay: 0}}
           onClick={room302}>
             <h3>Room 333</h3>
             <p>(333教室)</p>
           </motion.li>
-          <motion.li
-          initial={{x: 30, opacity: 0}}
-          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.45}}}
-          transition={{duration: 0, delay: 0}}
-          onClick={butumu}>
-            <h3>About</h3>
-            <p>(物理部展とは)</p>
-          </motion.li>
-          <motion.li
-          initial={{x: 30, opacity: 0}}
-          whileInView={{x: 0, opacity: 1,transition: {duration: 0.3, delay: 0.5}}}
-          transition={{duration: 0, delay: 0}}
-          onClick={katudou}>
-            <h3>Activity</h3>
-            <p>(普段の活動)</p>
-          </motion.li>
         </ul>
       </div>
-    </>
+    </div>
   )
 }
 
