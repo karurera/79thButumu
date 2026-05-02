@@ -1,0 +1,1 @@
+import{j as t}from"./vendor-CEEF87QS.js";function s(){return t.jsx("div",{className:"katudou",children:t.jsx("div",{className:"activity",children:t.jsx("h2",{children:"Activity"})})})}export{s as default};
