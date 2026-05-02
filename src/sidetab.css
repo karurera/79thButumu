@@ -112,8 +112,9 @@ h1#title {
 }
 
 h1#title.small {
-  font-size: 0;
+  font-size: 3em;
   left:-10px;
   transition-duration: 0.5s;
   letter-spacing: -10px;
+  -webkit-text-stroke: 0.6px #000;
 }

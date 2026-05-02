@@ -1,9 +1,9 @@
 import './home.css'
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { ROUTES } from "../assets/const"
 import { TfiArrowTopRight } from "react-icons/tfi";
-import { motion, useInView } from "motion/react"
+import { motion } from "motion/react"
 import butudai from './image/butudai.jpg'
 import testClass from './image/test_class.jpg'
 import m1game from './image/m1game.jpg'

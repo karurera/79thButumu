@@ -25,6 +25,7 @@
     width: 40vmin;
     height: 40vmin;
     position: absolute;
+    object-fit: cover;
 }
 
 .state1 {
